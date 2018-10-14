@@ -1,0 +1,41 @@
+package org.hansen.com.entities;
+
+import java.math.BigDecimal;
+
+public class ButterflyBlade {
+
+  private final String brand = "Butterfly";
+  private BigDecimal minPrice;
+  private BigDecimal maxPrice;
+  private BigDecimal storeDiscount;
+
+  public BigDecimal getStoreDiscount() {
+    return storeDiscount;
+  }
+
+  public void setStoreDiscount(BigDecimal storeDiscount) {
+    this.storeDiscount = storeDiscount;
+  }
+
+  public String getBrand() {
+    return brand;
+  }
+
+  public BigDecimal getMinPrice() {
+    return minPrice;
+  }
+
+  public void setMinPrice(BigDecimal minPrice) {
+    this.minPrice = minPrice;
+  }
+
+  public BigDecimal getMaxPrice() {
+    return maxPrice;
+  }
+
+  public void setMaxPrice(BigDecimal maxPrice) {
+    this.maxPrice = maxPrice;
+  }
+
+
+}
