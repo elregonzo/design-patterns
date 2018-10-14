@@ -2,29 +2,15 @@ package org.hansen.com.entities;
 
 import java.math.BigDecimal;
 
-public class StigaBlade {
+public class StigaBlade extends Blade {
 
-  private final String brand = "Stiga";
-  private BigDecimal minPrice;
-  private BigDecimal maxPrice;
+  public StigaBlade() {
+    this.minPrice = BigDecimal.ONE;
+    this.maxPrice = BigDecimal.valueOf(1000);
+  }
 
+  @Override
   public String getBrand() {
-    return brand;
-  }
-
-  public BigDecimal getMinPrice() {
-    return minPrice;
-  }
-
-  public void setMinPrice(BigDecimal minPrice) {
-    this.minPrice = minPrice;
-  }
-
-  public BigDecimal getMaxPrice() {
-    return maxPrice;
-  }
-
-  public void setMaxPrice(BigDecimal maxPrice) {
-    this.maxPrice = maxPrice;
+      return "stiga brand";
   }
 }

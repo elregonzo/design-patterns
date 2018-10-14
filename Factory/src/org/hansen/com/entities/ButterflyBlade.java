@@ -2,12 +2,15 @@ package org.hansen.com.entities;
 
 import java.math.BigDecimal;
 
-public class ButterflyBlade {
+public class ButterflyBlade extends Blade{
 
-  private final String brand = "Butterfly";
-  private BigDecimal minPrice;
-  private BigDecimal maxPrice;
   private BigDecimal storeDiscount;
+
+  public ButterflyBlade() {
+    this.minPrice = BigDecimal.ZERO;
+    this.maxPrice = BigDecimal.valueOf(10000);
+    this.storeDiscount = BigDecimal.valueOf(2000);
+  }
 
   public BigDecimal getStoreDiscount() {
     return storeDiscount;
@@ -17,25 +20,9 @@ public class ButterflyBlade {
     this.storeDiscount = storeDiscount;
   }
 
+
+  @Override
   public String getBrand() {
-    return brand;
+    return "butterfly brand";
   }
-
-  public BigDecimal getMinPrice() {
-    return minPrice;
-  }
-
-  public void setMinPrice(BigDecimal minPrice) {
-    this.minPrice = minPrice;
-  }
-
-  public BigDecimal getMaxPrice() {
-    return maxPrice;
-  }
-
-  public void setMaxPrice(BigDecimal maxPrice) {
-    this.maxPrice = maxPrice;
-  }
-
-
 }
