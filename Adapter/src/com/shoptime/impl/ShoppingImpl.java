@@ -37,7 +37,11 @@ public class ShoppingImpl implements Shopping {
   @Override
   public boolean peruPayment(Long dni, BigDecimal quantity) {
     TiendaTuPata tiendaTuPata = new TiendaTuPata();
-    String result = tiendaTuPata.pagar(dni, quantity.longValue());
-    return "si".equals(result);
+    String validationResult = tiendaTuPata.validar(dni, quantity.longValue());
+    if (validationResult.equals("si")) {
+        String result = tiendaTuPata.pagar(dni, quantity.longValue());
+        return "si".equals(result);
+    }
+    return validationResult.equals("si");
   }
 }
