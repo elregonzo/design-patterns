@@ -1,5 +1,8 @@
 package org.hansen.com.test;
 
+import com.adapter.AdapterPeruShopping;
+import com.latiendita.impl.TiendaTuPata;
+import com.latiendita.inter.PeruShopping;
 import com.shoptime.impl.ShoppingImpl;
 import com.shoptime.inter.Shopping;
 import java.math.BigDecimal;
@@ -12,13 +15,19 @@ public class test {
   public static void main(String[] args) {
 
      Shopping shopping = new ShoppingImpl();
-     shopping.validatePayment(CHAOUS_COMPULSIVE_BUYER_DNI,new BigDecimal("100"));
-     shopping.pay(CHAOUS_COMPULSIVE_BUYER_DNI,new BigDecimal("10"));
-     shopping.doPaymentSlip(CHAOUS_COMPULSIVE_BUYER_DNI, SLIP_BAR_CODE,new BigDecimal("10"));
+    testChaousPayment(shopping);
 
      //Peru payment
-    shopping.validatePeruPayment(CHAOUS_COMPULSIVE_BUYER_DNI,new BigDecimal("100"));
-    shopping.peruPayment(CHAOUS_COMPULSIVE_BUYER_DNI,new BigDecimal("100"));
+    PeruShopping peruShopping = new TiendaTuPata();
+    shopping = new AdapterPeruShopping(peruShopping);
+
+    testChaousPayment(shopping);
    }
+
+  private static void testChaousPayment(Shopping shopping) {
+    shopping.validatePayment(CHAOUS_COMPULSIVE_BUYER_DNI,new BigDecimal("100"));
+    shopping.pay(CHAOUS_COMPULSIVE_BUYER_DNI,new BigDecimal("10"));
+    shopping.doPaymentSlip(CHAOUS_COMPULSIVE_BUYER_DNI, SLIP_BAR_CODE,new BigDecimal("10"));
+  }
 
 }
