@@ -1,10 +1,13 @@
 package org.hansen.com.entities;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Vector;
 
-public class ButterflyBlade extends Blade{
+public class ButterflyBlade extends Blade implements Cloneable {
 
   private BigDecimal storeDiscount;
+  private Vector<Integer> v;
 
   public ButterflyBlade() {
     this.minPrice = BigDecimal.ZERO;
@@ -25,4 +28,12 @@ public class ButterflyBlade extends Blade{
   public String getBrand() {
     return "butterfly brand";
   }
+
+  public Object clone(){
+
+  }
+
+
+
+
 }
