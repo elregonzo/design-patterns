@@ -1,2 +1,3 @@
-Factory/.idea/
-Factory/out/
+*/.idea/
+*/out/
+*/lib
