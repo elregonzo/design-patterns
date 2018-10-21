@@ -29,11 +29,5 @@ public class test{
       tabletView.show();
       tabletView = new TabletView(productNet);
       tabletView.show();
-
-
-
-
-
-
     }
 }
