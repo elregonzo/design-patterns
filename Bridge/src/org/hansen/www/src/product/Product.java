@@ -7,7 +7,4 @@ public interface Product {
     String getDescription();
     BigDecimal getPrice();
     Integer getQuantity();
-
-
-
 }
